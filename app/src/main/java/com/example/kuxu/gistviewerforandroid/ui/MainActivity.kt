@@ -16,7 +16,6 @@ internal class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        message.text = viewModel.getGreeting()
+        viewModel.GithubLoginPage()
     }
 }
