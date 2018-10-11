@@ -5,4 +5,6 @@ import org.koin.dsl.module.module
 
 val serviceModule = module {
     factory { ChromeCustomTabsServiceImpl(androidApplication()) as ChromeCustomTabsService }
+
+    single { GithubAuthcationServiceImpl(get()) as GithubAuthcationService }
 }
