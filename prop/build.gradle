@@ -16,11 +16,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         def properties = new Properties()
-        properties.load(project.rootProject.file('local.properties').newDataInputStream())
-        def client_id = properties.getProperty("client_id")
-        def client_sercret = properties.getProperty("client_sercret")
-        buildConfigField("String", "client_id", "\"${client_id}\"")
-        buildConfigField("String", "client_sercret", "\"${client_sercret}\"")
+        if(file('local.properties').exists()){
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            def client_id = properties.getProperty("client_id")
+            def client_sercret = properties.getProperty("client_sercret")
+            buildConfigField("String", "client_id", "\"${client_id}\"")
+            buildConfigField("String", "client_sercret", "\"${client_sercret}\"")
+        }
+
     }
 
     buildTypes {
