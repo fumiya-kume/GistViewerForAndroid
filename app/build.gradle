@@ -61,4 +61,6 @@ dependencies {
     // Kotlin Coroutine
     def kotlin_coroutine_version = '0.30.2'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
+
+    implementation 'androidx.core:core-ktx:1.0.0'
 }
