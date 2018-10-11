@@ -18,5 +18,4 @@ internal class MainActivityViewModelSpek: KoinTest{
 
         verify(chromeCustomTabsService, times(1))
     }
-
 }
