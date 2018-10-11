@@ -1,5 +1,6 @@
 package com.example.kuxu.gistviewerforandroid.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kuxu.gistviewerforandroid.R
@@ -16,6 +17,20 @@ internal class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel.GithubLoginPage()
+        if (intent.data == null) {
+            viewModel.GithubLoginPage()
+        }
+        val uri = intent?.data
+        uri?.apply {
+            if (uri.toString().startsWith("gist-viewer")) {
+                val queryResult = uri.getQueryParameter("code")
+                message.text = queryResult
+            }
+        }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+
     }
 }
