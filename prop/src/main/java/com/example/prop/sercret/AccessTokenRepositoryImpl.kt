@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.infra
+package com.example.prop.sercret
 
 import android.content.Context
 import androidx.core.content.edit

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kuxu.gistviewerforandroid.R
-import com.example.kuxu.gistviewerforandroid.infra.AccessTokenRepository
+import com.example.prop.sercret.AccessTokenRepository
 import com.example.kuxu.gistviewerforandroid.service.GithubAuthcationService
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.runBlocking
