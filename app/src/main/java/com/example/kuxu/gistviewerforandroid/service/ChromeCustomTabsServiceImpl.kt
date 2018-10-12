@@ -10,7 +10,7 @@ internal class ChromeCustomTabsServiceImpl(
 ) : ChromeCustomTabsService, KoinComponent {
     override fun opneGithubLoginPage(clientId: String) {
         val customTabsIntent = CustomTabsIntent.Builder().build()
-        val uri = Uri.parse("https://github.com/login/oauth/authorize?client_id=${clientId}")
+        val uri = Uri.parse("https://github.com/login/oauth/authorize?scope=gist&client_id=${clientId}")
         customTabsIntent.launchUrl(context, uri)
     }
 }
