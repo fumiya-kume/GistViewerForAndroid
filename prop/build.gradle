@@ -15,13 +15,20 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        def properties = new Properties()
         if(file('local.properties').exists()){
+            def properties = new Properties()
             properties.load(project.rootProject.file('local.properties').newDataInputStream())
             def client_id = properties.getProperty("client_id")
             def client_sercret = properties.getProperty("client_sercret")
+
             buildConfigField("String", "client_id", "\"${client_id}\"")
             buildConfigField("String", "client_sercret", "\"${client_sercret}\"")
+        }else{
+            def clienId = System.getenv('client_id')
+            def clientSercret = System.getenv('client_sercret')
+
+            buildConfigField("String", "client_id", "$clienId")
+            buildConfigField("String", "client_sercret", "$clientSercret")
         }
 
     }
