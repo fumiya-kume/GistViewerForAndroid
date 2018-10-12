@@ -24,8 +24,8 @@ android {
             buildConfigField("String", "client_id", "\"${client_id}\"")
             buildConfigField("String", "client_sercret", "\"${client_sercret}\"")
         }else{
-            def clienId = System.getenv('client_id')
-            def clientSercret = System.getenv('client_sercret')
+            def clienId = System.getenv()['client_id']
+            def clientSercret = System.getenv()['client_sercret']
 
             buildConfigField("String", "client_id", "$clienId")
             buildConfigField("String", "client_sercret", "$clientSercret")
