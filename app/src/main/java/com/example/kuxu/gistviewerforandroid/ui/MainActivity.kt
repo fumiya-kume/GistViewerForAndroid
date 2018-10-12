@@ -1,6 +1,5 @@
 package com.example.kuxu.gistviewerforandroid.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.github_api.GithubService
@@ -40,10 +39,5 @@ internal class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-
     }
 }
