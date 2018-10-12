@@ -29,19 +29,17 @@ internal class MainActivity : AppCompatActivity() {
         uri?.apply {
             if (uri.toString().startsWith("gist-viewer")) {
                 val queryResult = uri.getQueryParameter("code")
-                message.text = queryResult
-                var accessToken = ""
-                runBlocking {
-                    accessToken = githubAuthcationService.AuthWithAccessToken(queryResult).await()
-                }
-                accessTokenRepository.saveAccessToken(accessToken)
+                queryResult?.let {
+                    runBlocking {
+                        val accessToken = githubAuthcationService.AuthWithAccessToken(queryResult).await()
+                    }
+                    accessTokenRepository.saveAccessToken(it)
 
-                message.text = "AccessToken:" + accessTokenRepository.loadAccessToken()
-
-                githubService.updateAccessToken(accessToken)
-                runBlocking {
-                    val result = githubService.loadGistCount().await()
-                    print(result)
+                    githubService.updateAccessToken(it)
+                    runBlocking {
+                        val result = githubService.loadGistCount().await()
+                        message.text = "Gist の数は $result だよ！"
+                    }
                 }
             }
         }
