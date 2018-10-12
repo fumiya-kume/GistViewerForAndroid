@@ -1,6 +1,7 @@
 package com.example.kuxu.gistviewerforandroid
 
 import android.app.Application
+import com.example.kuxu.gistviewerforandroid.infra.infraModule
 import com.example.kuxu.gistviewerforandroid.service.serviceModule
 import com.example.kuxu.gistviewerforandroid.ui.uiModule
 import com.example.prop.propModule
@@ -12,7 +13,8 @@ internal class MyApplication : Application() {
 
         val MainActivitymodule = listOf(
                 uiModule,
-                serviceModule
+                serviceModule,
+                infraModule
         )
 
         startKoin(
