@@ -15,7 +15,7 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        if(file('local.properties').exists()){
+        if (file('local.properties').exists()) {
             def properties = new Properties()
             properties.load(project.rootProject.file('local.properties').newDataInputStream())
             def client_id = properties.getProperty("client_id")
@@ -23,9 +23,9 @@ android {
 
             buildConfigField("String", "client_id", "\"${client_id}\"")
             buildConfigField("String", "client_sercret", "\"${client_sercret}\"")
-        }else{
-            def clienId = System.getenv()['client_id']
-            def clientSercret = System.getenv()['client_sercret']
+        } else {
+            def clienId = System.getenv()['github.client_id']
+            def clientSercret = System.getenv()['github_client_sercret']
 
             buildConfigField("String", "client_id", "$clienId")
             buildConfigField("String", "client_sercret", "$clientSercret")
