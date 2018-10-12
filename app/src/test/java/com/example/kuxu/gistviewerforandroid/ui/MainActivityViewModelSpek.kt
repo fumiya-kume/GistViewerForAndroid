@@ -8,11 +8,14 @@ import org.mockito.Mockito.*
 
 
 internal class MainActivityViewModelSpek : KoinTest {
+
     @Test
     fun 画面が開かれた時にGithubのログイン画面を開く() {
         val chromeCustomTabsService = mock(ChromeCustomTabsService::class.java)
         val githubProperties = mock(GithubProperties::class.java)
         val viewModel = MainActivityViewModel(chromeCustomTabsService, githubProperties)
+
+        `when`(githubProperties.clientId).thenReturn("hello")
 
         viewModel.GithubLoginPage()
 
