@@ -19,7 +19,6 @@ internal class AccessTokenRepositoryImplSpek : SubjectSpek<AccessTokenRepository
 
         val dummyValue = "hoge"
 
-
         on("アクセストークンを保存") {
             subject.saveAccessToken(dummyValue)
         }
