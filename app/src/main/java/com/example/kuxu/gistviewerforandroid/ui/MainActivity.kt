@@ -3,9 +3,10 @@ package com.example.kuxu.gistviewerforandroid.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.github_api.GithubService
 import com.example.kuxu.gistviewerforandroid.R
-import com.example.prop.sercret.AccessTokenRepository
 import com.example.kuxu.gistviewerforandroid.service.GithubAuthcationService
+import com.example.prop.sercret.AccessTokenRepository
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.runBlocking
 import org.koin.android.ext.android.inject
@@ -16,6 +17,7 @@ internal class MainActivity : AppCompatActivity() {
     val viewModel: MainActivityViewModel by viewModel()
     val githubAuthcationService: GithubAuthcationService by inject()
     val accessTokenRepository: AccessTokenRepository by inject()
+    val githubService: GithubService by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,12 @@ internal class MainActivity : AppCompatActivity() {
                 accessTokenRepository.saveAccessToken(accessToken)
 
                 message.text = "AccessToken:" + accessTokenRepository.loadAccessToken()
+
+                githubService.updateAccessToken(accessToken)
+                runBlocking {
+                    val result = githubService.loadGistCount().await()
+                    print(result)
+                }
             }
         }
     }

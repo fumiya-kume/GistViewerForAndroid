@@ -64,6 +64,11 @@ dependencies {
     testImplementation 'org.jetbrains.spek:spek-subject-extension:1.1.5'
     testImplementation 'org.junit.platform:junit-platform-runner:1.0.0'
     testImplementation 'org.mockito:mockito-core:2.23.0'
+    // 入力補完のための定義
+    implementation 'org.jetbrains.spek:spek-api:1.1.5'
+    implementation 'org.jetbrains.spek:spek-junit-platform-engine:1.1.5'
+    implementation 'org.jetbrains.spek:spek-subject-extension:1.1.5'
+    implementation 'org.junit.platform:junit-platform-runner:1.0.0'
     // Koin
     def koin_version = '1.0.1'
     implementation "org.koin:koin-core:$koin_version"
@@ -83,9 +88,5 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
     // Kotlin Extension
     implementation 'androidx.core:core-ktx:1.0.0'
-    // 入力補完のための定義
-    implementation 'org.jetbrains.spek:spek-api:1.1.5'
-    implementation 'org.jetbrains.spek:spek-junit-platform-engine:1.1.5'
-    implementation 'org.jetbrains.spek:spek-subject-extension:1.1.5'
-    implementation 'org.junit.platform:junit-platform-runner:1.0.0'
+
 }

@@ -16,7 +16,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
+    kotlin {
+        experimental {
+            coroutines 'enable'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -27,13 +31,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
-
     // Spek と mockito
     testImplementation 'org.jetbrains.spek:spek-api:1.1.5'
     testImplementation 'org.jetbrains.spek:spek-junit-platform-engine:1.1.5'
@@ -50,6 +52,7 @@ dependencies {
     def fuel_version = '1.15.0'
     implementation "com.github.kittinunf.fuel:fuel-android:$fuel_version"
     implementation "com.github.kittinunf.fuel:fuel-coroutines:$fuel_version"
+    implementation "com.github.kittinunf.fuel:fuel-moshi:$fuel_version"
     // Kotlin Coroutine
     def kotlin_coroutine_version = '0.30.2'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
@@ -60,4 +63,5 @@ dependencies {
     implementation 'org.jetbrains.spek:spek-junit-platform-engine:1.1.5'
     implementation 'org.jetbrains.spek:spek-subject-extension:1.1.5'
     implementation 'org.junit.platform:junit-platform-runner:1.0.0'
+    implementation project(':prop')
 }
