@@ -64,4 +64,9 @@ dependencies {
     implementation 'org.jetbrains.spek:spek-subject-extension:1.1.5'
     implementation 'org.junit.platform:junit-platform-runner:1.0.0'
     implementation project(':prop')
+    // Navigation Component
+    implementation "android.arch.navigation:navigation-fragment:1.0.0-alpha06"
+    implementation "android.arch.navigation:navigation-ui:1.0.0-alpha06"
+    implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha06"
+    implementation "android.arch.navigation:navigation-ui-ktx:1.0.0-alpha06"
 }
