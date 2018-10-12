@@ -21,13 +21,32 @@ android {
     dataBinding {
         enabled true
     }
-
     kotlin {
         experimental {
             coroutines 'enable'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/main.kotlin_module'
+        exclude 'META-INF/LICENSE-notice.md'
+    }
 }
+
+configurations.all {
+    resolutionStrategy {
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == 'org.jetbrains.kotlin') {
+                details.useVersion "$kotlin_version"
+            }
+        }
+    }
+}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -68,4 +87,10 @@ dependencies {
     testImplementation "org.jetbrains.spek:spek-junit-platform-engine:1.1.5"
     testImplementation "org.jetbrains.spek:spek-subject-extension:1.1.5"
     testImplementation "org.junit.platform:junit-platform-runner:1.0.0"
+    testImplementation "com.android.support.test:runner:1.0.2"
+    // 入力補完のための定義
+    implementation "org.jetbrains.spek:spek-api:1.1.5"
+    implementation "org.jetbrains.spek:spek-junit-platform-engine:1.1.5"
+    implementation "org.jetbrains.spek:spek-subject-extension:1.1.5"
+    implementation "org.junit.platform:junit-platform-runner:1.0.0"
 }
