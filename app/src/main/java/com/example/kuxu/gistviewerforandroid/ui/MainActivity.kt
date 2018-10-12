@@ -32,11 +32,8 @@ internal class MainActivity : AppCompatActivity() {
                 queryResult?.let {
                     runBlocking {
                         val accessToken = githubAuthcationService.AuthWithAccessToken(queryResult).await()
-                    }
-                    accessTokenRepository.saveAccessToken(it)
-
-                    githubService.updateAccessToken(it)
-                    runBlocking {
+                        accessTokenRepository.saveAccessToken(accessToken)
+                        githubService.updateAccessToken(accessToken)
                         val result = githubService.loadGistCount().await()
                         message.text = "Gist の数は $result だよ！"
                     }
