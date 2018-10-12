@@ -35,7 +35,6 @@ internal class MainActivity : AppCompatActivity() {
                 accessTokenRepository.saveAccessToken(accessToken)
 
                 message.text = "AccessToken:" + accessTokenRepository.loadAccessToken()
-
             }
         }
     }
