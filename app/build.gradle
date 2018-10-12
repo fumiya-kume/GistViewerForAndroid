@@ -61,6 +61,11 @@ dependencies {
     // Kotlin Coroutine
     def kotlin_coroutine_version = '0.30.2'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
-
+    // Kotlin Extension
     implementation 'androidx.core:core-ktx:1.0.0'
+    // Spek
+    testImplementation "org.jetbrains.spek:spek-api:1.1.5"
+    testImplementation "org.jetbrains.spek:spek-junit-platform-engine:1.1.5"
+    testImplementation "org.jetbrains.spek:spek-subject-extension:1.1.5"
+    testImplementation "org.junit.platform:junit-platform-runner:1.0.0"
 }
