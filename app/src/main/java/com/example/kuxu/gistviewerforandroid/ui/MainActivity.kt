@@ -8,7 +8,6 @@ import com.example.kuxu.gistviewerforandroid.HomeActivity
 import com.example.kuxu.gistviewerforandroid.R
 import com.example.kuxu.gistviewerforandroid.service.GithubAuthcationService
 import com.example.prop.sercret.AccessTokenRepository
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.experimental.runBlocking
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -36,19 +35,18 @@ internal class MainActivity : AppCompatActivity() {
                         accessTokenRepository.saveAccessToken(accessToken)
                         githubService.updateAccessToken(accessToken)
                         val result = githubService.loadGistCount().await()
-                        message.text = "Gist の数は $result だよ！"
+                        navigateToHomeActivity()
                     }
                 }
             }
         }
+    }
 
-        navigate_home_button.setOnClickListener {
-            val intent = Intent(
-                    this,
-                    HomeActivity::class.java
-            )
-
-            startActivity(intent)
-        }
+    private fun navigateToHomeActivity() {
+        val intent = Intent(
+                this,
+                HomeActivity::class.java
+        )
+        startActivity(intent)
     }
 }
