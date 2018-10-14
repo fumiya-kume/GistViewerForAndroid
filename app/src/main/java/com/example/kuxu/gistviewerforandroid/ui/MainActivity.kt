@@ -25,6 +25,11 @@ internal class MainActivity : AppCompatActivity() {
         if (intent.data == null) {
             viewModel.GithubLoginPage()
         }
+
+        if(!accessTokenRepository.loadAccessToken().isEmpty()){
+            navigateToHomeActivity()
+        }
+
         val uri = intent?.data
         uri?.apply {
             if (uri.toString().startsWith("gist-viewer")) {
