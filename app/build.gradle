@@ -90,4 +90,9 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
     // Kotlin Extension
     implementation 'androidx.core:core-ktx:1.0.0'
+    // Rx 関連
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.13"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.2"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.2.0"
 }
