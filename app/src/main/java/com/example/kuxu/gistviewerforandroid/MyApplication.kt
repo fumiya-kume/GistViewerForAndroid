@@ -18,10 +18,11 @@ internal class MyApplication : Application() {
                 infraModule
         )
 
-
         startKoin(
                 this,
-                mainActivityModule + githubServiceModule + propModule
+                mainActivityModule
+                        + githubServiceModule
+                        + propModule
         )
     }
 }
