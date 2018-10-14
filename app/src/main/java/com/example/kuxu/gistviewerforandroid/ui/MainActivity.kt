@@ -31,7 +31,7 @@ internal class MainActivity : AppCompatActivity() {
                 val queryResult = uri.getQueryParameter("code")
                 queryResult?.let {
                     runBlocking {
-                        val accessToken = githubAuthcationService.AuthWithAccessToken(queryResult).await()
+                        val accessToken = githubAuthcationService.AuthWithCode(queryResult).await()
                         accessTokenRepository.saveAccessToken(accessToken)
                         githubService.updateAccessToken(accessToken)
                         val result = githubService.loadGistCount().await()

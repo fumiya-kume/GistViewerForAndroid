@@ -9,9 +9,9 @@ import kotlinx.coroutines.experimental.async
 internal class GithubAuthcationServiceImpl(
         private val githubProperties: GithubProperties
 ) : GithubAuthcationService {
-    override fun AuthWithAccessToken(accessToken: String) =
+    override fun AuthWithCode(code: String) =
             GlobalScope.async {
-                val url = "https://github.com/login/oauth/access_token?code=$accessToken&client_id=${githubProperties.clientId}&client_secret=${githubProperties.ClientSercret}"
+                val url = "https://github.com/login/oauth/access_token?code=$code&client_id=${githubProperties.clientId}&client_secret=${githubProperties.ClientSercret}"
                 Fuel.post(url).awaitStringResult()
                         .fold({
                             val result = Regex("([=&])").split(it)
