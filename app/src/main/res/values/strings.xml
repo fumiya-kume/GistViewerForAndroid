@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GistViewerForAndroid</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

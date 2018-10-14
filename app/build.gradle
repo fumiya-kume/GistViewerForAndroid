@@ -54,6 +54,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
     // デフォルトで入ってたやつ
+    implementation 'com.google.android.material:material:1.0.0'
     androidTestImplementation 'androidx.test:runner:1.1.0-beta01'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-beta01'
     testImplementation 'junit:junit:4.12'
@@ -88,5 +89,4 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
     // Kotlin Extension
     implementation 'androidx.core:core-ktx:1.0.0'
-
 }

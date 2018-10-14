@@ -1,8 +1,10 @@
 package com.example.kuxu.gistviewerforandroid.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.github_api.GithubService
+import com.example.kuxu.gistviewerforandroid.HomeActivity
 import com.example.kuxu.gistviewerforandroid.R
 import com.example.kuxu.gistviewerforandroid.service.GithubAuthcationService
 import com.example.prop.sercret.AccessTokenRepository
@@ -38,6 +40,15 @@ internal class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        navigate_home_button.setOnClickListener {
+            val intent = Intent(
+                    this,
+                    HomeActivity::class.java
+            )
+
+            startActivity(intent)
         }
     }
 }
