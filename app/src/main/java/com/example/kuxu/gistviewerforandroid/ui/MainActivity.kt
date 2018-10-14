@@ -28,7 +28,7 @@ internal class MainActivity : AppCompatActivity() {
             viewModel.GithubLoginPage()
         }
 
-        if(!accessTokenRepository.loadAccessToken().isEmpty()){
+        if (!accessTokenRepository.loadAccessToken().isEmpty()) {
             navigateToHomeActivity()
         }
 
@@ -48,13 +48,16 @@ internal class MainActivity : AppCompatActivity() {
                                         }
                                     },
                                     onError = {
-                                        Toast.makeText(applicationContext,"Error",Toast.LENGTH_LONG).show()
+                                        ShowErrorMessage("AccessToken を取得に失敗しました")
                                     }
                             )
-
                 }
             }
         }
+    }
+
+    private fun ShowErrorMessage(message: String) {
+        Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
     }
 
     private fun navigateToHomeActivity() {
