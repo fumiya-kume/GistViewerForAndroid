@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.github_api.domain.UserInfomationRepository
-import com.example.github_api.infra.GithubService
+import com.example.github_api.infra.GithubServiceSetting
 import com.example.kuxu.gistviewerforandroid.HomeActivity
 import com.example.kuxu.gistviewerforandroid.R
 import com.example.kuxu.gistviewerforandroid.service.GithubAuthcationService
@@ -20,7 +20,7 @@ internal class MainActivity : AppCompatActivity() {
     val viewModel: MainActivityViewModel by viewModel()
     val githubAuthcationService: GithubAuthcationService by inject()
     val accessTokenRepository: AccessTokenRepository by inject()
-    val githubService: GithubService by inject()
+  val githubServiceSetting: GithubServiceSetting by inject()
     val userInfomationRepository: UserInfomationRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {

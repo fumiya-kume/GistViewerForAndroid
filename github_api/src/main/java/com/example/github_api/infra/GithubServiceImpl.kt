@@ -13,7 +13,7 @@ import kotlinx.coroutines.experimental.async
 
 internal class GithubServiceImpl(
         private val accessTokenRepository: AccessTokenRepository
-) : GithubService {
+) : GithubService, GithubServiceSetting {
 
     private val accessToken = accessTokenRepository.loadAccessToken()
 
