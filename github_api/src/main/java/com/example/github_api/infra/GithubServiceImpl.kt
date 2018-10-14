@@ -1,6 +1,7 @@
 package com.example.github_api.infra
 
 import awaitStringResponse
+import com.example.github_api.domain.GithubService
 import com.example.prop.sercret.AccessTokenRepository
 import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.httpGet

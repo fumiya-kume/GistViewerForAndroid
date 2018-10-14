@@ -1,4 +1,4 @@
-package com.example.github_api.infra
+package com.example.github_api.domain
 
 import kotlinx.coroutines.experimental.Deferred
 
