@@ -1,4 +1,4 @@
-package com.example.github_api
+package com.example.github_api.infra
 
 import awaitStringResponse
 import com.example.prop.sercret.AccessTokenRepository

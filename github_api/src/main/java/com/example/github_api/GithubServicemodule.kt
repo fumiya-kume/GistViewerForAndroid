@@ -1,7 +1,9 @@
 package com.example.github_api
 
-import org.koin.dsl.module.module
+import com.example.github_api.domain.domainModule
+import com.example.github_api.infra.infraModule
 
-public val githubServiceModule = module {
-    factory { GithubServiceImpl(get()) as GithubService }
-}
+public val githubServiceModule = listOf(
+        infraModule,
+        domainModule
+)
