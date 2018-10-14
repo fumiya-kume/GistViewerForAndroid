@@ -7,6 +7,7 @@ import com.github.kittinunf.fuel.httpGet
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
+import io.reactivex.Completable
 import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.async
@@ -47,10 +48,8 @@ internal class GithubServiceImpl(
                 )
             }
 
-
-    override fun updateAccessToken(accessToken: String) {
-        accessTokenRepository.saveAccessToken(accessToken)
-    }
-
-
+    override fun updateAccessToken(accessToken: String): Completable =
+            Completable.fromAction {
+                accessTokenRepository.saveAccessToken(accessToken)
+            }
 }
