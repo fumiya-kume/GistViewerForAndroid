@@ -1,7 +1,7 @@
 package com.example.kuxu.gistviewerforandroid.service
 
-import kotlinx.coroutines.experimental.Deferred
+import io.reactivex.Single
 
 internal interface GithubAuthcationService{
-    fun AuthWithCode(code: String): Deferred<String>
+    fun AuthWithCode(code: String): Single<String>
 }
