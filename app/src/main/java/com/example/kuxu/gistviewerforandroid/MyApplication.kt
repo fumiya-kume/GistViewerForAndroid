@@ -12,7 +12,7 @@ internal class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val MainActivitymodule = listOf(
+        val mainActivityModule = listOf(
                 uiModule,
                 serviceModule,
                 infraModule
@@ -21,7 +21,7 @@ internal class MyApplication : Application() {
 
         startKoin(
                 this,
-                MainActivitymodule + githubServiceModule + propModule
+                mainActivityModule + githubServiceModule + propModule
         )
     }
 }
