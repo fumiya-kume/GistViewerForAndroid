@@ -34,7 +34,7 @@ internal class MainActivity : AppCompatActivity() {
                         val accessToken = githubAuthcationService.AuthWithCode(queryResult).await()
                         accessTokenRepository.saveAccessToken(accessToken)
                         githubService.updateAccessToken(accessToken)
-                        val result = githubService.loadGistCount().await()
+                        githubService.loadGistCount().await()
                         navigateToHomeActivity()
                     }
                 }
