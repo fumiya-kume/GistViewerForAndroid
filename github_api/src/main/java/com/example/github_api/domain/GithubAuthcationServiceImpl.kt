@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.service
+package com.example.github_api.domain
 
 import awaitStringResult
 import com.example.prop.GithubProperties

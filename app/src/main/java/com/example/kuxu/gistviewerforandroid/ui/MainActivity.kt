@@ -8,7 +8,7 @@ import com.example.github_api.domain.UserInfomationRepository
 import com.example.github_api.infra.GithubServiceSetting
 import com.example.kuxu.gistviewerforandroid.HomeActivity
 import com.example.kuxu.gistviewerforandroid.R
-import com.example.kuxu.gistviewerforandroid.service.GithubAuthcationService
+import com.example.github_api.domain.GithubAuthcationService
 import com.example.prop.sercret.AccessTokenRepository
 import io.reactivex.rxkotlin.subscribeBy
 import org.koin.android.ext.android.inject

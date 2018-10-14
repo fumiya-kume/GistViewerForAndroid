@@ -7,4 +7,5 @@ import org.koin.dsl.module.module
 internal val domainModule = module {
   factory { UserInfomationRepositoryImpl() as UserInfomationRepository }
   factory { GithubServiceImpl(get()) as GithubService }
+  single { GithubAuthcationServiceImpl(get()) as GithubAuthcationService }
 }
