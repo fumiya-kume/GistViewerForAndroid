@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist
+package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 import com.example.github_api.gist.entity.Gist
 import com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel

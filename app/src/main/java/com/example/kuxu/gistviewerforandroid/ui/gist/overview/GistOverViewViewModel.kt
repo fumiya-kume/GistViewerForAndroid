@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist
+package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 import androidx.lifecycle.ViewModel
 import com.example.kuxu.gistviewerforandroid.service.ChromeCustomTabsService

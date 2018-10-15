@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist
+package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 import android.content.Context
 import android.view.LayoutInflater

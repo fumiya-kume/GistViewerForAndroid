@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui
+package com.example.kuxu.gistviewerforandroid.ui.gist.post
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist
+package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 import androidx.lifecycle.LiveData
 import com.example.github_api.gist.AuthzedUserGistDataStore

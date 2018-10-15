@@ -39,7 +39,7 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.GistPostActivity"
+            android:name=".ui.gist.post.GistPostActivity"
             android:label="@string/title_activity_gist_post"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
