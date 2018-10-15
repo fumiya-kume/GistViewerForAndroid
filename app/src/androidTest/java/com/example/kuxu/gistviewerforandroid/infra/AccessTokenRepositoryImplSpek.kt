@@ -1,7 +1,7 @@
 package com.example.kuxu.gistviewerforandroid.infra
 
 import androidx.test.platform.app.InstrumentationRegistry
-import com.example.prop.sercret.AccessTokenRepositoryImpl
+import com.example.github_api.sercret.AccessTokenRepositoryImpl
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on

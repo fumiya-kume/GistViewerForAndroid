@@ -1,4 +1,4 @@
-package com.example.github_api.domain
+package com.example.github_api.Auth
 
 import awaitStringResult
 import com.example.prop.GithubProperties
@@ -12,7 +12,7 @@ import kotlinx.coroutines.experimental.runBlocking
 internal class GithubAuthcationServiceImpl(
         private val githubProperties: GithubProperties
 ) : GithubAuthcationService {
-    override fun AuthWithCode(code: String): Single<String> =
+    override fun authWithCode(code: String): Single<String> =
             Single.fromCallable {
                 runBlocking {
                     sendAuthcationMessage(code).await()

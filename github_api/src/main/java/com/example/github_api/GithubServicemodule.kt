@@ -1,9 +1,11 @@
 package com.example.github_api
 
-import com.example.github_api.domain.domainModule
-import com.example.github_api.infra.infraModule
+import com.example.github_api.Auth.authModule
+import com.example.github_api.User.usermodule
+import com.example.github_api.sercret.sercretModule
 
 public val githubServiceModule = listOf(
-        infraModule,
-        domainModule
+  sercretModule,
+  authModule,
+  usermodule
 )
