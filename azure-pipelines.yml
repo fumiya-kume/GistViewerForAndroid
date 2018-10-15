@@ -27,9 +27,9 @@
     inputs:
      SourceFolder: '$(system.defaultworkingdirectory)'
 
-      Contents: '**/*.apk'
+     Contents: '**/*.apk'
 
-      TargetFolder: '$(build.artifactstagingdirectory)'
+     TargetFolder: '$(build.artifactstagingdirectory)'
 
 
   - task: PublishBuildArtifacts@1
