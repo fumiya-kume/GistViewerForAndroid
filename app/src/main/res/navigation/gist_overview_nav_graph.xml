@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gist_overview_nav_graph"
+    app:startDestination="@id/gistOverViewFragment">
+
+    <fragment
+        android:id="@+id/gistOverViewFragment"
+        android:name="com.example.kuxu.gistviewerforandroid.GistOverViewFragment"
+        android:label="fragment_gist_over_view"
+        tools:layout="@layout/fragment_gist_over_view" />
+</navigation>
