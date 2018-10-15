@@ -23,7 +23,13 @@ internal class GistOverViewViewHolder(
     )
   }
 
-  fun bindTo(bindingModel: GistOverViewItemBindingModel) {
+  fun bindTo(
+    bindingModel: GistOverViewItemBindingModel,
+    onClickGistListener: OnClickGistListener?
+  ) {
     binding.bindingModel = bindingModel
+    binding.root.setOnClickListener {
+      onClickGistListener?.onClick(bindingModel)
+    }
   }
 }

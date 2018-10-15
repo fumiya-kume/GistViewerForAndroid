@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistOverViewBinding
+import com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GistOverViewFragment : Fragment() {
@@ -25,6 +26,12 @@ class GistOverViewFragment : Fragment() {
 
     binding.gistOverviewRecyclerView.adapter = adapter
     binding.gistOverviewRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+    adapter.onClickGistListener = object : OnClickGistListener {
+      override fun onClick(gistOverViewItemBindingModel: GistOverViewItemBindingModel) {
+        viewModel.onclickGistItem(gistOverViewItemBindingModel)
+      }
+    }
 
     viewModel.gistOverViewLiveData.observeForever {
       adapter.submitList(it)

@@ -9,7 +9,13 @@ internal object GistOverViewItemConverter {
 
   private fun gistTitle(gist: Gist) = "${gist.owner.login} / ${gist.files.keys.first()}"
 
-  fun convertToBindingModel(gist: Gist): GistOverViewItemBindingModel = GistOverViewItemBindingModel(id = gist.id, gistTitle = gistTitle(gist), description = description(gist))
+  fun convertToBindingModel(gist: Gist): GistOverViewItemBindingModel =
+    GistOverViewItemBindingModel(
+      id = gist.id ?: "",
+      gistTitle = gistTitle(gist),
+      description = description(gist),
+      gistUrl = gist.htmlUrl
+    )
 
   fun convertToBindingModel(gistList: List<Gist>): List<GistOverViewItemBindingModel> = gistList.map { convertToBindingModel(it) }
 }

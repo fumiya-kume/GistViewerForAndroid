@@ -5,5 +5,5 @@ import org.koin.dsl.module.module
 
 internal val gistModule = module {
   factory { GistOverViewLiveDataFactory(get()) }
-  viewModel { GistOverViewViewModel(get()) }
+  viewModel { GistOverViewViewModel(get(),get()) }
 }

@@ -31,8 +31,10 @@ internal class GistOverViewAdapter(
     }
   }
 
+  var onClickGistListener: OnClickGistListener? = null
+
   override fun onBindViewHolder(holder: GistOverViewViewHolder, position: Int) {
-    holder.bindTo(getItem(position))
+    holder.bindTo(getItem(position), onClickGistListener)
   }
 
   override fun onCreateViewHolder(
