@@ -42,16 +42,16 @@ jobs:
   - task: AppCenterTest@1
     displayName: 'Test with Visual Studio App Center'
     inputs:
-    appFile: '**/*.apk'
+      appFile: '**/*.apk'
 
-    enabled: false
+      enabled: false
 
   - task: AppCenterDistribute@1
     displayName: 'Deploy **/*.apk to Visual Studio App Center'
     inputs:
-    appFile: '**/*.apk'
+      appFile: '**/*.apk'
 
-    symbolsIncludeParentDirectory: false
+      symbolsIncludeParentDirectory: false
 
-    enabled: false
+      enabled: false
 
