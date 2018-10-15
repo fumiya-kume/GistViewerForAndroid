@@ -16,7 +16,7 @@
 
   - task: AndroidSigning@3
     displayName: 'Signing and aligning APK file(s) **/*.apk'
-   inputs:
+    inputs:
     apksign: false
 
     zipalign: false
