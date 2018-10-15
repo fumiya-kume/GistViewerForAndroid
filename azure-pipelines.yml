@@ -11,7 +11,7 @@
     inputs:
      gradleWrapperFile: '$(Parameters.wrapperScript)'
 
-      tasks: '$(Parameters.tasks)'
+     tasks: '$(Parameters.tasks)'
 
 
   - task: AndroidSigning@3
