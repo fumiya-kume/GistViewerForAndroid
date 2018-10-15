@@ -4,7 +4,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 pool:
-  vmImage: 'Ubuntu 16.04'
+  vmImage: 'Hosted macOS'
+  demands: 
+  - java
+  - JDK
+  - AndroidSDK
 
 #Your build pipeline references an undefined variable named ‘Parameters.wrapperScript’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘Parameters.tasks’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
