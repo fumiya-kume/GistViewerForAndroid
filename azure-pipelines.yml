@@ -18,9 +18,9 @@ jobs:
   - task: AndroidSigning@3
     displayName: 'Signing and aligning APK file(s) **/*.apk'
     inputs:
-    apksign: false
+      apksign: false
 
-    zipalign: false
+      zipalign: false
 
 
   - task: CopyFiles@2
