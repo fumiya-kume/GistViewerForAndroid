@@ -2,7 +2,7 @@ package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 import androidx.lifecycle.ViewModel
 import com.example.kuxu.gistviewerforandroid.service.ChromeCustomTabsService
-import com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
 
 internal class GistOverViewViewModel(
   gistOverViewLiveDataFactory: GistOverViewLiveDataFactory,

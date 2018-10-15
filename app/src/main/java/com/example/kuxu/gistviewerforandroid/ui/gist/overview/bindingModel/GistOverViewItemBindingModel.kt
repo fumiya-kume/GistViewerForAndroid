@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel
+package com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel
 
 internal data class GistOverViewItemBindingModel(
   val id: String,

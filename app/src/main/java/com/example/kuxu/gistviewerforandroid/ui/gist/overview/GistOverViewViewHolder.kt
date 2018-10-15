@@ -4,7 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kuxu.gistviewerforandroid.databinding.ItemGistOverViewBinding
-import com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
+
 
 internal class GistOverViewViewHolder(
   private val binding: ItemGistOverViewBinding

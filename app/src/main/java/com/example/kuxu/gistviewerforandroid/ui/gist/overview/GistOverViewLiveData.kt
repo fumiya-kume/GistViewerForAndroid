@@ -2,7 +2,7 @@ package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 import androidx.lifecycle.LiveData
 import com.example.github_api.gist.AuthzedUserGistDataStore
-import com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
 import io.reactivex.rxkotlin.subscribeBy
 
 internal class GistOverViewLiveData(

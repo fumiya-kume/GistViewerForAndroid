@@ -7,7 +7,7 @@
 
         <variable
             name="bindingModel"
-            type="com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel" />
+            type="com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
