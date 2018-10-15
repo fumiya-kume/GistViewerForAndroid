@@ -39,15 +39,15 @@
 
 
   - task: AppCenterTest@1
-   displayName: 'Test with Visual Studio App Center'
-   inputs:
+    displayName: 'Test with Visual Studio App Center'
+    inputs:
     appFile: '**/*.apk'
 
     enabled: false
 
-- task: AppCenterDistribute@1
-  displayName: 'Deploy **/*.apk to Visual Studio App Center'
-  inputs:
+  - task: AppCenterDistribute@1
+    displayName: 'Deploy **/*.apk to Visual Studio App Center'
+    inputs:
     appFile: '**/*.apk'
 
     symbolsIncludeParentDirectory: false
