@@ -2,7 +2,6 @@ package com.example.github_api.gist.entity
 
 
 import com.squareup.moshi.Json
-import java.io.File
 
 data class Owner(@Json(name = "gists_url")
                  val gistsUrl: String = "",
@@ -70,8 +69,8 @@ data class Gist(@Json(name = "owner")
                 val gitPullUrl: String = "",
                 @Json(name = "comments_url")
                 val commentsUrl: String = "",
-                @Json(name = "files")
-                val files: Map<String, File>,
+//                @Json(name = "files")
+//                val files: Map<String, File>,
                 @Json(name = "id")
                 val id: String = "",
                 @Json(name = "node_id")

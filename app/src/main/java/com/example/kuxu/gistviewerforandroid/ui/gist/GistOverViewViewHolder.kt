@@ -1,0 +1,29 @@
+package com.example.kuxu.gistviewerforandroid.ui.gist
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.kuxu.gistviewerforandroid.databinding.ItemGistOverViewBinding
+import com.example.kuxu.gistviewerforandroid.ui.gist.bindingModel.GistOverViewItemBindingModel
+
+internal class GistOverViewViewHolder(
+  private val binding: ItemGistOverViewBinding
+) : RecyclerView.ViewHolder(binding.root) {
+  companion object {
+    fun create(
+      inflater: LayoutInflater,
+      parent: ViewGroup?,
+      attachToRoot: Boolean
+    ) = GistOverViewViewHolder(
+      ItemGistOverViewBinding.inflate(
+        inflater,
+        parent,
+        attachToRoot
+      )
+    )
+  }
+
+  fun bindTo(bindingModel: GistOverViewItemBindingModel) {
+    binding.bindingModel = bindingModel
+  }
+}
