@@ -1,0 +1,57 @@
+# Gradle
+# Build your Java project and run tests with Gradle using a Gradle wrapper script.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+jobs:
+- job: macOS
+  pool:
+    vmImage: 'macOS-10.13'
+  steps:
+  - task: Gradle@2
+    displayName: 'gradlew build'
+    inputs:
+     gradleWrapperFile: '$(Parameters.wrapperScript)'
+
+     tasks: '$(Parameters.tasks)'
+
+
+  - task: AndroidSigning@3
+    displayName: 'Signing and aligning APK file(s) **/*.apk'
+    inputs:
+      apksign: false
+
+      zipalign: false
+
+
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    inputs:
+     SourceFolder: '$(system.defaultworkingdirectory)'
+
+     Contents: '**/*.apk'
+
+     TargetFolder: '$(build.artifactstagingdirectory)'
+
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
+
+
+  - task: AppCenterTest@1
+    displayName: 'Test with Visual Studio App Center'
+    inputs:
+      appFile: '**/*.apk'
+
+      enabled: false
+
+  - task: AppCenterDistribute@1
+    displayName: 'Deploy **/*.apk to Visual Studio App Center'
+    inputs:
+      appFile: '**/*.apk'
+
+      symbolsIncludeParentDirectory: false
+
+      enabled: false
+
