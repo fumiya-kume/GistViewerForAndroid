@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
-    tools:context=".GistEditorFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -18,11 +15,11 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                app:title="@string/title_activity_gist_post"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="@string/title_activity_gist_post" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -46,6 +43,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gist_title_text_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Gist のタイトルを入力してください" />
@@ -64,6 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/gist_title_text_input_layout">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gist_content_text_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="ホゲホゲ〜" />
@@ -80,6 +79,7 @@
             android:backgroundTint="@color/colorPrimary" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gist_post_floating_action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="5dp"
@@ -89,5 +89,4 @@
             app:srcCompat="@android:drawable/ic_menu_upload" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-</FrameLayout>
+</layout>

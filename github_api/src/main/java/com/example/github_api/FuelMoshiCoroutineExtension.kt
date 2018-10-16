@@ -37,5 +37,6 @@ inline fun <reified T : Any> Request.body(item: T): Request {
   val request = this
   val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
   val requestAdapter = moshi.adapter(T::class.java)
-  return request.body(requestAdapter.toJson(item))
+  val header = hashMapOf("Content-Type" to "application/json")
+  return request.header(header).body(requestAdapter.toJson(item))
 }
