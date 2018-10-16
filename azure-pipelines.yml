@@ -2,10 +2,10 @@
 # Build your Java project and run tests with Gradle using a Gradle wrapper script.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
 parameters:
   wrapperScript: 'gradlew'
-  tasks: 'build'
-  
+  tasks: 'build
 
 jobs:
 - job: macOS
@@ -15,9 +15,9 @@ jobs:
   - task: Gradle@2
     displayName: 'gradlew build'
     inputs:
-     gradleWrapperFile: '$(Parameters.wrapperScript)'
+     gradleWrapperFile: '${{Parameters.wrapperScript}}'
 
-     tasks: '$(Parameters.tasks)'
+     tasks: '${{Parameters.tasks}}'
 
 
   - task: AndroidSigning@3
@@ -29,9 +29,9 @@ jobs:
 
 
   - task: CopyFiles@2
-    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    displayName: 'Copy Files to: ${{build.artifactstagingdirectory}}'
     inputs:
-     SourceFolder: '$(system.defaultworkingdirectory)'
+     SourceFolder: '${{system.defaultworkingdirectory}}'
 
      Contents: '**/*.apk'
 
