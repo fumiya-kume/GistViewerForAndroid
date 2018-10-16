@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistOverViewBinding
 import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
@@ -32,6 +33,9 @@ class GistOverViewFragment : Fragment() {
         viewModel.onclickGistItem(gistOverViewItemBindingModel)
       }
     }
+
+    val itemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+    binding.gistOverviewRecyclerView.addItemDecoration(itemDecoration)
 
     viewModel.gistOverViewLiveData.observeForever {
       adapter.submitList(it)

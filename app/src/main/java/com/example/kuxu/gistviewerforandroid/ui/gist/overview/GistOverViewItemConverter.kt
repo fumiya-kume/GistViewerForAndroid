@@ -14,7 +14,8 @@ internal object GistOverViewItemConverter {
       id = gist.id ?: "",
       gistTitle = gistTitle(gist),
       description = description(gist),
-      gistUrl = gist.htmlUrl
+      gistUrl = gist.htmlUrl,
+      favorite = false
     )
 
   fun convertToBindingModel(gistList: List<Gist>): List<GistOverViewItemBindingModel> = gistList.map { convertToBindingModel(it) }
