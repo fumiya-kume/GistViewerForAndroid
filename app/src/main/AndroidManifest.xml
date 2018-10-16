@@ -35,8 +35,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.gist.post.GistPostActivity"
+            android:label="@string/title_activity_gist_post"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

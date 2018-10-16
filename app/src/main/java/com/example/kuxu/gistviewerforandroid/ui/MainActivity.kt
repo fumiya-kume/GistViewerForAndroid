@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.github_api.Auth.GithubAuthcationService
 import com.example.github_api.User.UserInfomationDataStore
 import com.example.github_api.sercret.AccessTokenRepository
-import com.example.kuxu.gistviewerforandroid.HomeActivity
 import com.example.kuxu.gistviewerforandroid.R
 import io.reactivex.rxkotlin.subscribeBy
 import org.koin.android.ext.android.inject
