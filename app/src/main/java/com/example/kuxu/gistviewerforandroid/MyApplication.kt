@@ -6,6 +6,7 @@ import com.example.github_api.startGithubClient
 import com.example.kuxu.gistviewerforandroid.infra.infraModule
 import com.example.kuxu.gistviewerforandroid.service.serviceModule
 import com.example.kuxu.gistviewerforandroid.ui.gist.gistModule
+import com.example.kuxu.gistviewerforandroid.ui.gist.post.postModule
 import com.example.kuxu.gistviewerforandroid.ui.uiModule
 import com.example.prop.propModule
 import org.koin.android.ext.android.startKoin
@@ -18,7 +19,8 @@ internal class MyApplication : Application() {
       uiModule,
       serviceModule,
       infraModule,
-      gistModule
+      gistModule,
+      postModule
     )
 
     startKoin(

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistEditorBinding
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,10 +40,19 @@ public class GistEditorFragment : Fragment() {
 //      )
 //    }
 
+    val adapter = GistFileEditorAdapter(requireContext())
+
+    binding.gistEditorFileRecyclerView.adapter = adapter
+    binding.gistEditorFileRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
     viewModel.PostDone.observeForever {
       if (it) {
         Snackbar.make(container as View, "gist の投稿が完了しました", Snackbar.LENGTH_LONG).show()
       }
+    }
+
+    viewModel.gistFileLiveData.observeForever {
+      adapter.submitList(it)
     }
 
     return binding.root

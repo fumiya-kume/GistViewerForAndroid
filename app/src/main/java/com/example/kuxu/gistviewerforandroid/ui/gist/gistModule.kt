@@ -11,5 +11,5 @@ internal val gistModule = module {
   viewModel { GistOverViewViewModel(get(), get()) }
 
   // post
-  viewModel { GistEditorFragmentViewModel(get()) }
+  viewModel { GistEditorFragmentViewModel(get(),get()) }
 }

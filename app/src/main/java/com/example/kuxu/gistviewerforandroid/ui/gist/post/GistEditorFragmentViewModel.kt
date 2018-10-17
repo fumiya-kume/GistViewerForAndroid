@@ -8,8 +8,11 @@ import com.example.github_api.gist.entity.GistPostData
 import io.reactivex.rxkotlin.subscribeBy
 
 internal class GistEditorFragmentViewModel(
-  private val gistService: PostGistService
+  private val gistService: PostGistService,
+  private val gistFileLiveDataFactory: GistFileLiveDataFactory
 ) : ViewModel() {
+
+  val gistFileLiveData = gistFileLiveDataFactory.create()
 
   val PostDone = MutableLiveData<Boolean>().apply {
     value = false
@@ -34,4 +37,5 @@ internal class GistEditorFragmentViewModel(
         }
       )
   }
+
 }

@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="bindingModel"
+            type="com.example.kuxu.gistviewerforandroid.ui.gist.post.bindingModel.GistEditorFileBindingModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
-        tools:context=".ui.gist.post.GistPostActivity"
         tools:showIn="@layout/activity_gist_post">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -28,7 +34,8 @@
                 android:id="@+id/gist_title_text_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Gist のタイトルを入力してください" />
+                android:hint="Gist のタイトルを入力してください"
+                android:text="@{bindingModel.fileName}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,7 +54,8 @@
                 android:id="@+id/gist_content_text_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="ホゲホゲ〜" />
+                android:hint="ホゲホゲ〜"
+                android:text="@{bindingModel.content}" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
