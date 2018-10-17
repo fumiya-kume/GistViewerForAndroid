@@ -32,12 +32,12 @@ public class GistEditorFragment : Fragment() {
       false
     )
 
-    binding.gistPostFloatingActionButton.setOnClickListener {
-      viewModel.post(
-        binding.gistTitleTextInputEditText.text.toString(),
-        binding.gistContentTextInputEditText.text.toString()
-      )
-    }
+//    binding.gistPostFloatingActionButton.setOnClickListener {
+//      viewModel.post(
+//        binding.gistTitleTextInputEditText.text.toString(),
+//        binding.gistContentTextInputEditText.text.toString()
+//      )
+//    }
 
     viewModel.PostDone.observeForever {
       if (it) {
