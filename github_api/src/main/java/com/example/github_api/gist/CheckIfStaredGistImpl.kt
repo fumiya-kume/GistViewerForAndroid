@@ -6,20 +6,15 @@ import io.reactivex.Single
 import kotlinx.coroutines.experimental.runBlocking
 
 internal class CheckIfStaredGistImpl : CheckIfStaredGist {
-  override fun StaredGistList(gistId: String): Single<Map<String, Boolean>> =
+  override fun StaredGistList(gistId: String): Single<Pair<String, Boolean>> =
     Single.fromCallable {
       runBlocking {
-        val response = "/gists/$gistId/star".httpGet().awaitStringResponse()
-        response.third.fold(
-          success = {
-            // 200番台はスターしてる状態、それ以外はスターしてないと判定
-            val stared = response.second.statusCode == 2
-            return@runBlocking mapOf(gistId to stared)
-          },
-          failure = {
-            throw it.exception
-          }
-        )
+        val (_, response, _) = "/gists/$gistId/star".httpGet().awaitStringResponse()
+        val checkResult = when (response.statusCode) {
+          204 -> true
+          else -> false
+        }
+        return@runBlocking gistId to checkResult
       }
     }
 }

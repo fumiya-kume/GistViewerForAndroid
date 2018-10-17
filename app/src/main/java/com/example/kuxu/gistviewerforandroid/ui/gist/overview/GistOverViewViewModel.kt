@@ -14,7 +14,7 @@ internal class GistOverViewViewModel(
     gistOverViewItemBindingModel: GistOverViewItemBindingModel
   ) {
     gistOverViewItemBindingModel.gistUrl?.let {
-      chromeCustomTabsService.OpenChrome(gistOverViewItemBindingModel.gistUrl)
+      chromeCustomTabsService.OpenChrome(url = gistOverViewItemBindingModel.gistUrl)
     }
   }
 }

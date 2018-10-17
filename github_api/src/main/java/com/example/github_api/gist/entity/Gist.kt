@@ -40,8 +40,8 @@ data class Gist(
   @Json(name = "git_pull_url") val gitPullUrl: String? = "",
   @Json(name = "comments_url") val commentsUrl: String? = "",
   @Json(name = "files") val files: Map<String, File>,
-  @Json(name = "id") val id: String? = "",
-  @Json(name = "node_id") val nodeId: String? = "")
+  @Json(name = "id") val id: String = "",
+  @Json(name = "node_id") val nodeId: String = "")
 
 
 data class File(
