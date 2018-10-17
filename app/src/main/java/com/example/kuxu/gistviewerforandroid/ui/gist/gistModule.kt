@@ -7,7 +7,7 @@ import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 internal val gistModule = module {
-  factory { GistOverViewLiveDataFactory(get()) }
+  factory { GistOverViewLiveDataFactory(get(), get()) }
   viewModel { GistOverViewViewModel(get(), get()) }
 
   // post
