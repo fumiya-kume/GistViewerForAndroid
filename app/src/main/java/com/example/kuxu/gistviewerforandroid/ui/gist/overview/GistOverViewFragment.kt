@@ -1,6 +1,7 @@
 package com.example.kuxu.gistviewerforandroid.ui.gist.overview
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistOverViewBinding
 import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.post.GistPostActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GistOverViewFragment : Fragment() {
@@ -24,6 +26,11 @@ class GistOverViewFragment : Fragment() {
       container,
       false
     )
+
+    binding.gistPostFloatingActionButton.setOnClickListener {
+      val intent = Intent(requireContext(), GistPostActivity::class.java)
+      startActivity(intent)
+    }
 
     binding.gistOverviewRecyclerView.adapter = adapter
     binding.gistOverviewRecyclerView.layoutManager = LinearLayoutManager(requireContext())

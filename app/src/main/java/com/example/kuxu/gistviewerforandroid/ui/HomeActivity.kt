@@ -8,11 +8,5 @@ internal class HomeActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_home)
-//    setSupportActionBar(toolbar)
-//
-//    fab.setOnClickListener { view ->
-//      val intent = Intent(this, GistPostActivity::class.java)
-//      startActivity(intent)
-//    }
   }
 }
