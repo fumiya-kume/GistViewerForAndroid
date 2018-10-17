@@ -49,9 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="5dp"
-            android:foregroundTintMode="add"
             android:tint="#FFF"
-            app:layout_anchorGravity="end"
             app:layout_anchor="@id/gist_post_botton_app_bar"
             app:srcCompat="@android:drawable/ic_input_add" />
 
