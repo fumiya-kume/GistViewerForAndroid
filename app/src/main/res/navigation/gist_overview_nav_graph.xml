@@ -9,5 +9,18 @@
         android:id="@+id/gistOverViewFragment"
         android:name="com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.GistOverViewFragment"
         android:label="fragment_gist_over_view"
-        tools:layout="@layout/fragment_gist_over_view" />
+        tools:layout="@layout/fragment_gist_over_view" >
+        <action
+            android:id="@+id/action_gistOverViewFragment_to_gistDetailViewFragment"
+            app:destination="@id/gistDetailViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gistDetailViewFragment"
+        android:name="com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.GistDetailViewFragment"
+        android:label="fragment_gist_detail_view"
+        tools:layout="@layout/fragment_gist_detail_view" >
+        <argument
+            android:name="gistId"
+            app:argType="string" />
+    </fragment>
 </navigation>
