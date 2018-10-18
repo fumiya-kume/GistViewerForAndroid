@@ -14,7 +14,7 @@ internal val gistModule = module {
   viewModel { GistOverViewViewModel(get(), get()) }
 
   // Viewer/ Detail
-  factory { GistDetailLiveDataFactory(get()) }
+  factory { GistDetailLiveDataFactory(get(), get()) }
   viewModel { (targetGistId: String) -> GistDetailViewFragmentViewModel(targetGistId, get()) }
 
   // post

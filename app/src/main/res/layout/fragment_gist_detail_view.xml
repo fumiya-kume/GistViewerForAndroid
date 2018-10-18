@@ -99,10 +99,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:src="@drawable/ic_round_favorite_24px"
-            android:tint="@android:color/white"
+            android:tint="@{bindingModel.favorite? @android:color/holo_orange_light: @android:color/white }"
             app:backgroundTint="@android:color/holo_red_light"
             app:fabSize="auto"
             app:layout_anchor="@id/app_bar_layout"
-            app:layout_anchorGravity="bottom|right" />
+            app:layout_anchorGravity="bottom|right"
+            tools:tint="@android:color/holo_orange_light"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
