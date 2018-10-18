@@ -45,7 +45,8 @@ data class Gist(
 
 
 data class File(
-  @Json(name = "filename") val fileName: String
+  @Json(name = "filename") val fileName: String,
+  @Json(name = "size") val size: Int
 )
 
 

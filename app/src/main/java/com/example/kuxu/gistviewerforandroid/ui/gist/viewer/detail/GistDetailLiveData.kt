@@ -20,7 +20,7 @@ internal class GistDetailLiveData(
         },
         onError = {
           // 良さげなエラー処理を考える, とりあえずはエラーメッセージを表示しとくだけ
-          value = GistDetailBindingModel("", "対象のGist が見つかりませんでした")
+          value = GistDetailBindingModel("", "対象のGist が見つかりませんでした","","","","",false)
         }
       )
   }
