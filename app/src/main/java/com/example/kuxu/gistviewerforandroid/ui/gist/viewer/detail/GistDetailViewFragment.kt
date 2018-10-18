@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistDetailViewBinding
-import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.bindingModel.GistDetailBindingModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 
 class GistDetailViewFragment : Fragment() {
@@ -20,10 +21,13 @@ class GistDetailViewFragment : Fragment() {
       false
     )
 
-    val gistId = GistDetailViewFragmentArgs.fromBundle(arguments).gistId
+    val targetGistId = GistDetailViewFragmentArgs.fromBundle(arguments).gistId
 
-    binding.bindingModel = GistDetailBindingModel(gistId, gistId)
+    val viewModel: GistDetailViewFragmentViewModel by viewModel() { parametersOf(targetGistId) }
 
+    viewModel.gistDetailLiveData.observeForever {
+      binding.bindingModel = it
+    }
     return binding.root
   }
 }
