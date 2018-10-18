@@ -1,10 +1,10 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.overview
+package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kuxu.gistviewerforandroid.databinding.ItemGistOverViewBinding
-import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.bindingModel.GistOverViewItemBindingModel
 
 
 internal class GistOverViewViewHolder(

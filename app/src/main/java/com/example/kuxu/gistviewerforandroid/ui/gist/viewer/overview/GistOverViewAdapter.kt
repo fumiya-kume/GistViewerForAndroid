@@ -1,11 +1,11 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.overview
+package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.bindingModel.GistOverViewItemBindingModel
 
 internal class GistOverViewAdapter(
   private val context: Context

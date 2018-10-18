@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.overview
+package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview
 
 
 import android.content.Intent
@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistOverViewBinding
-import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.bindingModel.GistOverViewItemBindingModel
 import com.example.kuxu.gistviewerforandroid.ui.gist.post.GistPostActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

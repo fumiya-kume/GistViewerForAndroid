@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.overview
+package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview
 
 import com.example.github_api.gist.AuthzedUserGistDataStore
 import com.example.github_api.gist.CheckIfStaredGist
