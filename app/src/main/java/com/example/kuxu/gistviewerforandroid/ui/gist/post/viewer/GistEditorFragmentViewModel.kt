@@ -24,7 +24,8 @@ internal class GistEditorFragmentViewModel(
     val postData = GistPostData(
       description = description,
       public = true,
-      files = gistFileLiveData.value?.map { it.fileName to Content(it.content) }?.toMap() ?: emptyMap())
+      files = gistFileLiveData.value?.map { it.fileName to Content(it.content) }?.toMap()
+        ?: emptyMap())
 
     gistService.PostGist(postData)
       .subscribeBy(
@@ -43,5 +44,4 @@ internal class GistEditorFragmentViewModel(
       content
     )
   }
-
 }

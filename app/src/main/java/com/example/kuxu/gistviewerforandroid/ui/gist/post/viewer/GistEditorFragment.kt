@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-public class GistEditorFragment : BottomSheetDialogFragment() {
+internal class GistEditorFragment : BottomSheetDialogFragment() {
 
   private val viewModel: GistEditorFragmentViewModel by viewModel()
 
@@ -28,7 +28,6 @@ public class GistEditorFragment : BottomSheetDialogFragment() {
       container,
       false
     )
-
 
     setHasOptionsMenu(true)
     binding.gistPostBottonAppBar.replaceMenu(R.menu.gist_edit_viewer_menu)
@@ -92,8 +91,6 @@ public class GistEditorFragment : BottomSheetDialogFragment() {
           }
         }
       }
-
-
     })
 
     fun showSnackMessage(message: String) {
@@ -127,9 +124,6 @@ public class GistEditorFragment : BottomSheetDialogFragment() {
         gistTitle
       )
     }
-
     return binding.root
   }
-
-
 }

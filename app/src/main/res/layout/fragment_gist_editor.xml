@@ -92,7 +92,7 @@
             app:elevation="6dp"
             app:fabSize="auto"
             app:layout_anchor="@id/gist_post_botton_app_bar"
-            app:srcCompat="@drawable/ic_round_save_24px" />
+            app:srcCompat="@drawable/ic_round_send_24px" />
 
         <LinearLayout
             android:id="@+id/add_file_bottom_sheet"
