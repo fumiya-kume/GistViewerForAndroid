@@ -1,4 +1,4 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.post
+package com.example.kuxu.gistviewerforandroid.ui.gist.post.viewer
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,14 +19,13 @@ internal class GistEditorFragmentViewModel(
   }
 
   fun post(
-    description: String,
-    content: String
+    description: String
   ) {
     val postData = GistPostData(
       description = description,
       public = true,
-      files = mapOf
-      (pair = description to Content(content)))
+      files = gistFileLiveData.value?.map { it.fileName to Content(it.content) }?.toMap() ?: emptyMap())
+
     gistService.PostGist(postData)
       .subscribeBy(
         onComplete = {
@@ -36,6 +35,13 @@ internal class GistEditorFragmentViewModel(
           PostDone.value = false
         }
       )
+  }
+
+  fun AddNewFile(fileName: String, content: String) {
+    gistFileLiveData.AddNewFile(
+      fileName,
+      content
+    )
   }
 
 }

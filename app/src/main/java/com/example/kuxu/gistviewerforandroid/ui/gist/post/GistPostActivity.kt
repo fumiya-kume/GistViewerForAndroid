@@ -3,6 +3,7 @@ package com.example.kuxu.gistviewerforandroid.ui.gist.post
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kuxu.gistviewerforandroid.R
+import com.example.kuxu.gistviewerforandroid.ui.gist.post.viewer.GistEditorFragment
 
 class GistPostActivity : AppCompatActivity() {
 
