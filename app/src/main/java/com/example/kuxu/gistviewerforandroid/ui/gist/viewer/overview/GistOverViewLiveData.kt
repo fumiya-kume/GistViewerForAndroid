@@ -1,10 +1,10 @@
-package com.example.kuxu.gistviewerforandroid.ui.gist.overview
+package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview
 
 import androidx.lifecycle.LiveData
 import com.example.github_api.gist.AuthzedUserGistDataStore
 import com.example.github_api.gist.CheckIfStaredGist
 import com.example.github_api.gist.entity.Gist
-import com.example.kuxu.gistviewerforandroid.ui.gist.overview.bindingModel.GistOverViewItemBindingModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.bindingModel.GistOverViewItemBindingModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.coroutines.experimental.GlobalScope
