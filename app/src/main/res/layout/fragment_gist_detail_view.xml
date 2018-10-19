@@ -103,6 +103,7 @@
             android:backgroundTint="@color/colorPrimary" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gist_favorite_floating_action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"

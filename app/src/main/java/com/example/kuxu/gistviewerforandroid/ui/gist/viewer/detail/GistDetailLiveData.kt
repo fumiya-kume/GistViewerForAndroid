@@ -1,6 +1,6 @@
 package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail
 
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.github_api.gist.CheckIfStaredGist
 import com.example.kuxu.gistviewerforandroid.domain.repository.GistDetailRepository
 import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.bindingModel.GistDetailBindingModel
@@ -14,7 +14,7 @@ internal class GistDetailLiveData(
   private val targetGistId: String,
   private val gistDetailRepository: GistDetailRepository,
   private val checkIfStaredGist: CheckIfStaredGist
-) : LiveData<GistDetailBindingModel>() {
+) : MutableLiveData<GistDetailBindingModel>() {
   override fun onActive() {
     super.onActive()
     gistDetailRepository
