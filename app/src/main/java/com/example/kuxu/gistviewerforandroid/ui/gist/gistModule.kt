@@ -1,6 +1,7 @@
 package com.example.kuxu.gistviewerforandroid.ui.gist
 
 import com.example.kuxu.gistviewerforandroid.ui.gist.post.viewer.GistEditorFragmentViewModel
+import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.GistDetailFileListLiveDataFactory
 import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.GistDetailLiveDataFactory
 import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.GistDetailViewFragmentViewModel
 import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.GistOverViewLiveDataFactory
@@ -15,7 +16,8 @@ internal val gistModule = module {
 
   // Viewer/ Detail
   factory { GistDetailLiveDataFactory(get(), get()) }
-  viewModel { (targetGistId: String) -> GistDetailViewFragmentViewModel(targetGistId, get()) }
+  viewModel { (targetGistId: String) -> GistDetailViewFragmentViewModel(targetGistId, get(), get()) }
+  factory { GistDetailFileListLiveDataFactory(get()) }
 
   // post
   viewModel { GistEditorFragmentViewModel(get(), get()) }

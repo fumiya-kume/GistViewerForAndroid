@@ -30,6 +30,10 @@ class GistDetailViewFragment : Fragment() {
 
     val viewModel: GistDetailViewFragmentViewModel by viewModel() { parametersOf(targetGistId) }
 
+    val GistDetailFileViewAdapter = GistDetailFileViewAdapter(requireContext())
+
+    binding.gistFileRecyclerView.adapter = GistDetailFileViewAdapter
+
     viewModel.gistDetailLiveData.observeForever {
       binding.bindingModel = it
       GlobalScope.launch(Dispatchers.Main) {
@@ -41,6 +45,11 @@ class GistDetailViewFragment : Fragment() {
         }
       }
     }
+
+    viewModel.gistDetailFileListLiveData.observeForever {
+      GistDetailFileViewAdapter.submitList(it)
+    }
+
     return binding.root
   }
 }
