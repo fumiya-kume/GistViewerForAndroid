@@ -7,4 +7,6 @@ internal val gistModule = module {
   factory { PostGistServiceImpl() as PostGistService }
   factory { CheckIfStaredGistImpl() as CheckIfStaredGist }
   factory { GetSpecificGistImpl() as GetSpecificGist }
+  factory { AddStarGistServiceImpl() as AddStarGistService }
+  factory { RemoveStarGistServiceImpl() as RemoveStarGistService }
 }

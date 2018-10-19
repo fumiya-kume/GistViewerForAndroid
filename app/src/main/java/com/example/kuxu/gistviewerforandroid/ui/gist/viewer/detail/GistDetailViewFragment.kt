@@ -54,6 +54,17 @@ class GistDetailViewFragment : Fragment() {
       }
     }
 
+    binding.gistFavoriteFloatingActionButton.setOnClickListener {
+      binding.bindingModel?.let {
+        val targetGistId = it.id
+        if (it.favorite) {
+          viewModel.removeFavorite(targetGistId)
+        } else {
+          viewModel.addFavorite(targetGistId)
+        }
+      }
+    }
+
     viewModel.gistDetailFileListLiveData.observeForever {
       adapter.submitList(it)
     }

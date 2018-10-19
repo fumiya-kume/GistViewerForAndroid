@@ -7,6 +7,7 @@ import com.example.kuxu.gistviewerforandroid.service.ChromeCustomTabsService
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
+import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.launch
 import java.util.concurrent.TimeUnit
@@ -28,30 +29,30 @@ internal class GistDetailViewFragmentViewModel(
     chromeCustomTabsService.OpenChrome(rawUrl)
   }
 
-  fun addFavorite(targetGistId: String, beforeFavorite: Boolean) {
-    GlobalScope.launch {
+  fun addFavorite(targetGistId: String) {
+    GlobalScope.launch(Dispatchers.Main) {
       updateFavoriteStatus(targetGistId, true)
       addGistFavoriteUsecase.execute(targetGistId)
         .toObservable<Unit>()
         .throttleLast(10L, TimeUnit.MILLISECONDS)
         .subscribeBy(
           onError = {
-            updateFavoriteStatus(targetGistId, beforeFavorite)
+            updateFavoriteStatus(targetGistId, false)
           }
         )
         .addTo(disposable)
     }
   }
 
-  fun removeFavorite(targetGistId: String, beforeFavorite: Boolean) {
-    GlobalScope.launch {
+  fun removeFavorite(targetGistId: String) {
+    GlobalScope.launch(Dispatchers.Main) {
       updateFavoriteStatus(targetGistId, false)
       removeGistFavoriteUsecase.execute(targetGistId)
         .toObservable<Unit>()
         .throttleLast(10L, TimeUnit.MILLISECONDS)
         .subscribeBy(
           onError = {
-            updateFavoriteStatus(targetGistId, beforeFavorite)
+            updateFavoriteStatus(targetGistId, true)
           }
         )
         .addTo(disposable)
