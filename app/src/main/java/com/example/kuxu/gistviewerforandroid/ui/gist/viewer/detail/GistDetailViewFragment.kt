@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistDetailViewBinding
+import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.detail.bindingModel.GistDetailFileBindingModel
 import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.launch
@@ -30,9 +31,16 @@ class GistDetailViewFragment : Fragment() {
 
     val viewModel: GistDetailViewFragmentViewModel by viewModel() { parametersOf(targetGistId) }
 
-    val GistDetailFileViewAdapter = GistDetailFileViewAdapter(requireContext())
+    val adapter = GistDetailFileViewAdapter(requireContext())
 
-    binding.gistFileRecyclerView.adapter = GistDetailFileViewAdapter
+    adapter.gistDetailClickListener = object : OnGistDetailClickListener {
+      override fun OnClick(bindingModel: GistDetailFileBindingModel) {
+        if (bindingModel.fileUrl.isEmpty()) return
+        viewModel.OpenGistFileOnBrowser(bindingModel.fileUrl)
+      }
+    }
+
+    binding.gistFileRecyclerView.adapter = adapter
 
     viewModel.gistDetailLiveData.observeForever {
       binding.bindingModel = it
@@ -47,7 +55,7 @@ class GistDetailViewFragment : Fragment() {
     }
 
     viewModel.gistDetailFileListLiveData.observeForever {
-      GistDetailFileViewAdapter.submitList(it)
+      adapter.submitList(it)
     }
 
     return binding.root

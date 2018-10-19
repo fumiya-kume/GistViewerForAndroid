@@ -16,7 +16,7 @@ internal val gistModule = module {
 
   // Viewer/ Detail
   factory { GistDetailLiveDataFactory(get(), get()) }
-  viewModel { (targetGistId: String) -> GistDetailViewFragmentViewModel(targetGistId, get(), get()) }
+  viewModel { (targetGistId: String) -> GistDetailViewFragmentViewModel(targetGistId, get(), get(), get()) }
   factory { GistDetailFileListLiveDataFactory(get()) }
 
   // post

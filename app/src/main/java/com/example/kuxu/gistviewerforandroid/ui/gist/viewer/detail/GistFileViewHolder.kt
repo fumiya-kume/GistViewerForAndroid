@@ -23,7 +23,13 @@ internal class GistFileViewHolder private constructor(
       )
   }
 
-  fun bindTo(bindingModel: GistDetailFileBindingModel) {
+  fun bindTo(
+    bindingModel: GistDetailFileBindingModel,
+    onGistDetailClickListener: OnGistDetailClickListener?
+  ) {
     binding.bindingModel = bindingModel
+    binding.root.setOnClickListener {
+      onGistDetailClickListener?.OnClick(bindingModel)
+    }
   }
 }

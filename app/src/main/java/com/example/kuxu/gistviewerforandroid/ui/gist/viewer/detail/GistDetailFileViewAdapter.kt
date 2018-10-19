@@ -38,5 +38,11 @@ internal class GistDetailFileViewAdapter(
       parent
     )
 
-  override fun onBindViewHolder(holder: GistFileViewHolder, position: Int) = holder.bindTo(getItem(position))
+  var gistDetailClickListener: OnGistDetailClickListener? = null
+
+  override fun onBindViewHolder(holder: GistFileViewHolder, position: Int) =
+    holder.bindTo(
+      getItem(position),
+      gistDetailClickListener
+    )
 }
