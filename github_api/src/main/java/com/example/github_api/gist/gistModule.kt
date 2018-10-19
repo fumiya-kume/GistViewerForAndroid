@@ -6,4 +6,5 @@ internal val gistModule = module {
   factory { AuthzedUserGistDataStoreImpl() as AuthzedUserGistDataStore }
   factory { PostGistServiceImpl() as PostGistService }
   factory { CheckIfStaredGistImpl() as CheckIfStaredGist }
+  factory { GetSpecificGistImpl() as GetSpecificGist }
 }

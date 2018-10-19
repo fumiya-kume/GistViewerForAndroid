@@ -1,17 +1,18 @@
 package com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kuxu.gistviewerforandroid.R
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistOverViewBinding
 import com.example.kuxu.gistviewerforandroid.ui.gist.viewer.overview.bindingModel.GistOverViewItemBindingModel
-import com.example.kuxu.gistviewerforandroid.ui.gist.post.GistPostActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GistOverViewFragment : Fragment() {
@@ -28,8 +29,7 @@ class GistOverViewFragment : Fragment() {
     )
 
     binding.gistPostFloatingActionButton.setOnClickListener {
-      val intent = Intent(requireContext(), GistPostActivity::class.java)
-      startActivity(intent)
+      Navigation.findNavController(it).navigate(R.id.action_gistOverViewFragment_to_gistEditorFragment)
     }
 
     binding.gistOverviewRecyclerView.adapter = adapter
@@ -37,7 +37,7 @@ class GistOverViewFragment : Fragment() {
 
     adapter.onClickGistListener = object : OnClickGistListener {
       override fun onClick(gistOverViewItemBindingModel: GistOverViewItemBindingModel) {
-        viewModel.onclickGistItem(gistOverViewItemBindingModel)
+        view?.findNavController()?.navigate(GistOverViewFragmentDirections.actionGistOverViewFragmentToGistDetailViewFragment(gistOverViewItemBindingModel.id))
       }
     }
 
