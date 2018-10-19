@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_gistOverViewFragment_to_gistDetailViewFragment"
             app:destination="@id/gistDetailViewFragment" />
+        <action
+            android:id="@+id/action_gistOverViewFragment_to_gistEditorFragment"
+            app:destination="@id/gistEditorFragment" />
     </fragment>
     <fragment
         android:id="@+id/gistDetailViewFragment"
@@ -23,4 +26,9 @@
             android:name="gistId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/gistEditorFragment"
+        android:name="com.example.kuxu.gistviewerforandroid.ui.gist.post.viewer.GistEditorFragment"
+        android:label="GistEditorFragment"
+        tools:layout="@layout/fragment_gist_editor"/>
 </navigation>
