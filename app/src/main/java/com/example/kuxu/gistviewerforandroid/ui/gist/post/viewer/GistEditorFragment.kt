@@ -2,11 +2,14 @@ package com.example.kuxu.gistviewerforandroid.ui.gist.post.viewer
 
 
 import android.annotation.SuppressLint
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kuxu.gistviewerforandroid.R
 import com.example.kuxu.gistviewerforandroid.databinding.FragmentGistEditorBinding
@@ -14,6 +17,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 internal class GistEditorFragment : BottomSheetDialogFragment() {
 
@@ -40,6 +44,11 @@ internal class GistEditorFragment : BottomSheetDialogFragment() {
     viewModel.PostDone.observeForever {
       if (it) {
         Snackbar.make(container as View, "gist の投稿が完了しました", Snackbar.LENGTH_LONG).show()
+        view?.let {
+          Navigation.findNavController(it).popBackStack()
+          val inputMethodManager = activity?.applicationContext?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
+          inputMethodManager!!.hideSoftInputFromWindow(it.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        }
       }
     }
 
