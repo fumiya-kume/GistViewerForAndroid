@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bindingModel"
+            type="com.example.gist.ui.viewer.detail.bindingModel.GistDetailBindingModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".ui.gist.viewer.detail.GistDetailViewFragment">
+
+                    <ImageView
+                        android:id="@+id/gist_owner_image_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                        tools:src="@tools:sample/avatars" />
+
+                    <Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginBottom="8dp"
+                        android:title="@{bindingModel.gistName}"
+                        app:layout_collapseMode="pin"
+                        app:layout_constraintBottom_toBottomOf="@+id/gist_owner_image_view"
+                        tools:title="@string/gist_detail_view_title">
+
+                    </Toolbar>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/gist_owner_name_app_compat_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@{bindingModel.ownerName}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+                        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                        tools:text="fumiya-kume" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/gist_created_date_app_compat_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@{bindingModel.createdDate}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintBottom_toTopOf="@+id/gist_owner_name_app_compat_text_view"
+                        app:layout_constraintEnd_toEndOf="@+id/gist_owner_name_app_compat_text_view"
+                        tools:text="2018/07/17 21:12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/gist_file_size_app_compat_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@{bindingModel.gistSize}"
+                        app:layout_constraintBottom_toBottomOf="@+id/gist_created_date_app_compat_text_view"
+                        app:layout_constraintStart_toEndOf="@+id/gist_created_date_app_compat_text_view"
+                        app:layout_constraintTop_toTopOf="@+id/gist_created_date_app_compat_text_view"
+                        tools:text="1.64KB" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gist_file_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/item_gist_file_view" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/secondaryColor" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gist_favorite_floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_round_favorite_24px"
+            android:tint="@{bindingModel.favorite? @android:color/holo_orange_light: @android:color/white }"
+            app:backgroundTint="@android:color/holo_red_light"
+            app:borderWidth="0dp"
+            app:fabSize="auto"
+            app:layout_anchor="@id/app_bar_layout"
+            app:layout_anchorGravity="bottom|right"
+            tools:tint="@color/primaryColor" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loding_content_loading_progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

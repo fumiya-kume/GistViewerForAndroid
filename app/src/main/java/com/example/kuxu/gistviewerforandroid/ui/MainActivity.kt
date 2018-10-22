@@ -42,7 +42,6 @@ internal class MainActivity : AppCompatActivity() {
         viewModel.GithubLoginPage()
       }
 
-
       val uri = intent?.data
 
       fun checkOpenFromGithubAuthcation(uri: Uri) = uri.toString().startsWith("gist-viewer")
@@ -66,7 +65,6 @@ internal class MainActivity : AppCompatActivity() {
           }
         }
       }
-
     }
   }
 

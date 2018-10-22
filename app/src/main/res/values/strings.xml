@@ -2,10 +2,5 @@
     <string name="app_name">GistViewerForAndroid</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_gist_post">GistPostActivity</string>
-    <string name="gist_favorite_emoji">🌟</string>
-    <string name="gist_not_favorite_emoji">☆</string>
+    <string name="gist_overview_fragment_title">Gist 一覧画面</string>
 </resources>

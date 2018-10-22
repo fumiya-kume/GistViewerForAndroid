@@ -1,1 +1,1 @@
-include ':app', ':prop', ':github_api'
+include ':app', ':prop', ':github_api', ':gist'
