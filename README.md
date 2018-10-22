@@ -11,10 +11,6 @@
 
 # 内部設計を図解してみる
 
+[](https://photos.app.goo.gl/jg5CDTGvFFnfVYT27)
 
-
-
-
-
-
-
+[](https://photos.app.goo.gl/jL6o4wurpucphuJE6)
