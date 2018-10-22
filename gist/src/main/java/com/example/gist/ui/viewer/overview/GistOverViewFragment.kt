@@ -27,12 +27,18 @@ class GistOverViewFragment : Fragment() {
       false
     )
 
+    val viewModel: GistOverViewViewModel = getViewModel()
+
     binding.gistPostFloatingActionButton.setOnClickListener {
       Navigation.findNavController(it).navigate(R.id.action_gistOverViewFragment_to_gistEditorFragment)
     }
 
     binding.gistOverviewRecyclerView.adapter = adapter
     binding.gistOverviewRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+    binding.gistOverviewSwipeRefreshLayout.setOnRefreshListener {
+      viewModel.refreshItem()
+    }
 
     adapter.onClickGistListener = object : OnClickGistListener {
       override fun onClick(gistOverViewItemBindingModel: GistOverViewItemBindingModel) {
@@ -46,10 +52,10 @@ class GistOverViewFragment : Fragment() {
     val itemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
     binding.gistOverviewRecyclerView.addItemDecoration(itemDecoration)
 
-    val viewModel: GistOverViewViewModel = getViewModel()
-
     viewModel.gistOverViewLiveData.observeForever {
       adapter.submitList(it)
+      binding.gistOverviewSwipeRefreshLayout.isRefreshing = false
+      binding.lodingContentLoadingProgressBar.visibility = View.GONE
     }
 
     return binding.root

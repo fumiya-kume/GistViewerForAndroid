@@ -32,5 +32,6 @@ internal class GistOverViewViewHolder(
     binding.root.setOnClickListener {
       onClickGistListener?.onClick(bindingModel)
     }
+    binding.executePendingBindings()
   }
 }

@@ -36,17 +36,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:textColorHint="@color/secondaryColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textColorHint="@color/secondaryColor">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:textColor="@color/secondaryColor"
                     android:id="@+id/gist_title_text_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Gist のタイトルを入力してください" />
+                    android:hint="Gist のタイトルを入力してください"
+                    android:textColor="@color/secondaryColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,13 +89,13 @@
             android:id="@+id/gist_save_floating_action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="5dp"
             android:backgroundTint="@color/secondaryColor"
+            android:elevation="5dp"
             android:tint="#FFF"
+            app:borderWidth="0dp"
             app:elevation="6dp"
             app:fabSize="auto"
             app:layout_anchor="@id/gist_post_botton_app_bar"
-            app:borderWidth="0dp"
             app:srcCompat="@drawable/ic_round_send_24px" />
 
         <LinearLayout
@@ -104,6 +104,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:orientation="vertical"
+            android:paddingBottom="20dp"
             app:behavior_hideable="true"
             app:behavior_peekHeight="200dp"
             app:layout_behavior="@string/bottom_sheet_behavior">
@@ -125,8 +126,10 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:hint="新しいファイル名"
                         android:foregroundTint="@color/secondaryColor"
+                        android:hint="新しいファイル名"
+                        android:textColor="@color/secondaryColor"
+                        android:textColorHint="@color/secondaryColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -141,6 +144,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:hint="ファイルコンテンツを入力してください"
+                        android:textColorHint="@color/secondaryColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/file_name_edit_text">
@@ -148,7 +152,8 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/file_content_edit_text"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/secondaryColor" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -157,9 +162,12 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/secondaryColor"
                         android:text="追加"
+                        android:textColor="@color/secondaryTextColor"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/file_content_text_input_layout" />
+                        app:layout_constraintTop_toBottomOf="@+id/file_content_text_input_layout"
+                        app:rippleColor="@color/secondaryDarkColor" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>

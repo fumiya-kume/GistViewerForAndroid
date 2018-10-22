@@ -31,5 +31,6 @@ internal class GistFileViewHolder private constructor(
     binding.root.setOnClickListener {
       onGistDetailClickListener?.OnClick(bindingModel)
     }
+    binding.executePendingBindings()
   }
 }

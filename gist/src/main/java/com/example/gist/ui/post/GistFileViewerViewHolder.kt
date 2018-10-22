@@ -27,5 +27,6 @@ internal class GistFileViewerViewHolder(
     bindingModel: GistFileViewBindingModel
   ) {
     binding.bindingModel = bindingModel
+    binding.executePendingBindings()
   }
 }

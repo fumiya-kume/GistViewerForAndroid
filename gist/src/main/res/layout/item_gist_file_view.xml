@@ -13,7 +13,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/gist_file_name_app_compat_text_view"
@@ -25,7 +26,7 @@
             android:hint="ファイル名"
             android:text="@{bindingModel.fileName}"
             android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -39,7 +40,7 @@
             android:layout_marginEnd="8dp"
             android:hint="ファイルコンテンツ"
             android:text="@{bindingModel.content}"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gist_file_name_app_compat_text_view"

@@ -11,7 +11,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gist.R
 import com.example.gist.databinding.FragmentGistEditorBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -32,9 +31,6 @@ internal class GistEditorFragment : BottomSheetDialogFragment() {
       container,
       false
     )
-
-    setHasOptionsMenu(true)
-    binding.gistPostBottonAppBar.replaceMenu(R.menu.gist_edit_viewer_menu)
 
     val adapter = GistFileViewerAdapter(requireContext())
 
@@ -107,11 +103,13 @@ internal class GistEditorFragment : BottomSheetDialogFragment() {
     }
 
     binding.saveNewFileMaterialButton.setOnClickListener {
-      val fileName = binding.fileNameEditText.text?.toString() ?: ""
-      val content = binding.fileContentEditText.text?.toString() ?: ""
+      val fileName = binding.fileNameEditText.text?.toString()
+      val content = binding.fileContentEditText.text?.toString()
 
-      if (fileName.isEmpty()) {
+      if (fileName == null || fileName.isEmpty()) {
         showSnackMessage("Require Filename")
+      } else if (content == null || content.isEmpty()) {
+        showSnackMessage("Require Gist File Content")
       } else {
         SetVisibleNewFileBottomSheed(false)
         SetVisibleAddNewFileFloatingActionButton(true)
@@ -124,9 +122,13 @@ internal class GistEditorFragment : BottomSheetDialogFragment() {
     }
 
     binding.gistSaveFloatingActionButton.setOnClickListener {
-      val gistTitle = binding.gistTitleTextInputEditText.text?.toString() ?: ""
-      if (gistTitle.isEmpty()) {
+      val gistTitle = binding.gistTitleTextInputEditText.text?.toString()
+      if (gistTitle == null || gistTitle.isEmpty()) {
         showSnackMessage("Gist のタイトルを入力してください")
+        return@setOnClickListener
+      }else if(adapter.itemCount == 0){
+        showSnackMessage("ファイルを一つ以上追加してください")
+        return@setOnClickListener
       }
 
       viewModel.post(

@@ -9,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
+import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.launch
 
@@ -22,18 +23,26 @@ internal class GistOverViewLiveData(
   override fun onActive() {
     super.onActive()
 
-    authzedUserGistDataStore.loadGistList()
-      .subscribeBy(
-        onSuccess = {
-          value = GistOverViewItemConverter.convertToBindingModel(it)
-          GlobalScope.launch {
+    refreshGistList()
+  }
+
+  fun refreshGistList() {
+    GlobalScope.launch {
+      authzedUserGistDataStore.loadGistList()
+        .subscribeBy(
+          onSuccess = {
+            GlobalScope.launch(Dispatchers.Main)
+            {
+              value = GistOverViewItemConverter.convertToBindingModel(it)
+            }
             checkForFavorite(it)
+
+          },
+          onError = {
+            value = emptyList()
           }
-        },
-        onError = {
-          value = emptyList()
-        }
-      ).addTo(disposable)
+        ).addTo(disposable)
+    }
   }
 
   override fun onInactive() {
