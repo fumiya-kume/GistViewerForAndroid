@@ -100,10 +100,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="@color/colorPrimary" />
+            android:backgroundTint="@color/secondaryColor" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/gist_favorite_floating_action_button"
+            app:borderWidth="0dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
@@ -113,7 +114,7 @@
             app:fabSize="auto"
             app:layout_anchor="@id/app_bar_layout"
             app:layout_anchorGravity="bottom|right"
-            tools:tint="@android:color/holo_orange_light" />
+            tools:tint="@color/primaryColor" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

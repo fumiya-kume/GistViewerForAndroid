@@ -16,7 +16,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@color/primaryColor"
                 android:elevation="5dp"
                 app:title="@string/title_activity_home">
 
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:fabAlignmentMode="end"
-            android:backgroundTint="@color/colorPrimary" />
+            android:backgroundTint="@color/primaryColor" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/gist_post_floating_action_button"
@@ -51,6 +51,9 @@
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:tint="#FFF"
+            android:shadowColor="@color/secondaryDarkColor"
+            app:borderWidth="0dp"
+            android:backgroundTint="@color/secondaryColor"
             app:layout_anchor="@id/gist_post_botton_app_bar"
             app:srcCompat="@android:drawable/ic_input_add" />
 

@@ -17,7 +17,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="@color/primaryColor"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:title="@string/title_activity_gist_post" />
 
@@ -38,9 +38,11 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColorHint="@color/secondaryColor">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:textColor="@color/secondaryColor"
                     android:id="@+id/gist_title_text_input_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -55,6 +57,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/secondaryColor"
                 android:text="ファイルの追加"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/primaryColor"
             app:fabAlignmentMode="end"
             app:fabCradleMargin="0dp"
 
@@ -87,11 +90,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="5dp"
-            android:foregroundTint="#FFF"
+            android:backgroundTint="@color/secondaryColor"
             android:tint="#FFF"
             app:elevation="6dp"
             app:fabSize="auto"
             app:layout_anchor="@id/gist_post_botton_app_bar"
+            app:borderWidth="0dp"
             app:srcCompat="@drawable/ic_round_send_24px" />
 
         <LinearLayout
@@ -122,6 +126,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:hint="新しいファイル名"
+                        android:foregroundTint="@color/secondaryColor"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
