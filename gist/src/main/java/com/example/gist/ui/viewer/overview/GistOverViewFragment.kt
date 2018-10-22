@@ -36,14 +36,15 @@ class GistOverViewFragment : Fragment() {
 
     adapter.onClickGistListener = object : OnClickGistListener {
       override fun onClick(gistOverViewItemBindingModel: GistOverViewItemBindingModel) {
-        view?.findNavController()?.navigate(GistOverViewFragmentDirections.actionGistOverViewFragmentToGistDetailViewFragment(gistOverViewItemBindingModel.id))
+        view?.findNavController()?.navigate(
+          GistOverViewFragmentDirections.actionGistOverViewFragmentToGistDetailViewFragment(
+            gistOverViewItemBindingModel.id
+          ))
       }
     }
 
     val itemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
     binding.gistOverviewRecyclerView.addItemDecoration(itemDecoration)
-
-
 
     val viewModel: GistOverViewViewModel = getViewModel()
 

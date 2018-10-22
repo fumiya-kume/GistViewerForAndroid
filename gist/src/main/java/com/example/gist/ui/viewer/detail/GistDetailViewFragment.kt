@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.gist.databinding.FragmentGistDetailViewBinding
 import com.example.gist.ui.viewer.detail.bindingModel.GistDetailFileBindingModel
+import kotlinx.android.synthetic.main.fragment_gist_detail_view.*
 import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.launch
@@ -67,6 +68,7 @@ class GistDetailViewFragment : Fragment() {
 
     viewModel.gistDetailFileListLiveData.observeForever {
       adapter.submitList(it)
+      loding_content_loading_progress_bar.visibility = View.GONE
     }
 
     return binding.root
