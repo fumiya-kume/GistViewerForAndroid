@@ -9,6 +9,23 @@
 - 画面遷移は 1Activity, Multi Fragment、jetPack の Navigatiion Component の活用
 - (あまり書けなかったけど) JUniit + Mockito + Spek での単体テストの記述
 
+# 利用しているライブラリ一覧
+
+- RxJava
+- Navigation Component
+- Safe Args
+  takahirom さんがツイートしてたこのライブラリですね。
+  https://twitter.com/new_runnable/status/1052932598316466177
+- ViewModel
+- LiveData
+- Kotlin Coroutine
+- Moshi
+- JUnit
+- glide
+- koin
+- Fuel
+- 
+
 # 図解してみる
 
 ![001](https://user-images.githubusercontent.com/16269075/47306462-80761d00-d667-11e8-90c7-ce06d5321c80.png)
