@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gist_overview_nav_graph"
+    app:startDestination="@id/gistOverViewFragment">
+
+    <fragment
+        android:id="@+id/gistOverViewFragment"
+        android:name="com.example.gist.ui.viewer.overview.GistOverViewFragment"
+        android:label="fragment_gist_over_view"
+        tools:layout="com.example.gist.ui.viewer.overview.GistOverViewFragment">
+        <action
+            android:id="@+id/action_gistOverViewFragment_to_gistDetailViewFragment"
+            app:destination="@id/gistDetailViewFragment" />
+        <action
+            android:id="@+id/action_gistOverViewFragment_to_gistEditorFragment"
+            app:destination="@id/gistEditorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gistDetailViewFragment"
+        android:name="com.example.gist.ui.viewer.detail.GistDetailViewFragment"
+        android:label="fragment_gist_detail_view">
+        <argument
+            android:name="gistId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/gistEditorFragment"
+        android:name="com.example.gist.ui.post.GistEditorFragment"
+        android:label="GistEditorFragment"
+        tools:layout="@layout/fragment_gist_editor" />
+</navigation>
