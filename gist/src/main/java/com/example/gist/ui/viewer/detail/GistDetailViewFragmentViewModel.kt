@@ -31,14 +31,16 @@ internal class GistDetailViewFragmentViewModel(
   }
 
   fun addFavorite(targetGistId: String) {
-    GlobalScope.launch(Dispatchers.Main) {
-      updateFavoriteStatus(targetGistId, true)
+    updateFavoriteStatus(targetGistId, true)
+    GlobalScope.launch() {
       addGistFavoriteUsecase.execute(targetGistId)
         .toObservable<Unit>()
-        .throttleLast(10L, TimeUnit.MILLISECONDS)
+        .throttleLast(1L, TimeUnit.MILLISECONDS)
         .subscribeBy(
           onError = {
-            updateFavoriteStatus(targetGistId, false)
+            GlobalScope.launch(Dispatchers.Main) {
+              updateFavoriteStatus(targetGistId, false)
+            }
           }
         )
         .addTo(disposable)
@@ -46,14 +48,16 @@ internal class GistDetailViewFragmentViewModel(
   }
 
   fun removeFavorite(targetGistId: String) {
-    GlobalScope.launch(Dispatchers.Main) {
-      updateFavoriteStatus(targetGistId, false)
+    updateFavoriteStatus(targetGistId, false)
+    GlobalScope.launch() {
       removeGistFavoriteUsecase.execute(targetGistId)
         .toObservable<Unit>()
-        .throttleLast(10L, TimeUnit.MILLISECONDS)
+        .throttleLast(1L, TimeUnit.MILLISECONDS)
         .subscribeBy(
           onError = {
-            updateFavoriteStatus(targetGistId, true)
+            GlobalScope.launch(Dispatchers.Main) {
+              updateFavoriteStatus(targetGistId, true)
+            }
           }
         )
         .addTo(disposable)
