@@ -30,7 +30,6 @@ internal class MyApplication : Application() {
       propModule
         + githubServiceModule
         + mainActivityModule
-        + gistModule
     )
 
     startGithubClient()
