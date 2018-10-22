@@ -51,7 +51,7 @@
                         android:title="@{bindingModel.gistName}"
                         app:layout_collapseMode="pin"
                         app:layout_constraintBottom_toBottomOf="@+id/gist_owner_image_view"
-                        tools:title="Gistのタイトル">
+                        tools:title="@string/gist_detail_view_title">
 
                     </Toolbar>
 
