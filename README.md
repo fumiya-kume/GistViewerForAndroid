@@ -33,6 +33,16 @@
 
 ## Gist　詳細画面
 
+# 動かす時の注意点
+
+```
+Callback を
+gist-viewer://login
+に指定したアプリの
+ clientId,clientSercret を入れてください
+ 入れる場所等は下記の画像にて解説してあります。
+ ```
+
 # 図解してみる
 
 ![001](https://user-images.githubusercontent.com/16269075/47306462-80761d00-d667-11e8-90c7-ce06d5321c80.png)
