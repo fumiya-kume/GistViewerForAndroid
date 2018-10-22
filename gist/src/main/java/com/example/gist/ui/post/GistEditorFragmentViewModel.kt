@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import com.example.github_api.gist.PostGistService
 import com.example.github_api.gist.entity.Content
 import com.example.github_api.gist.entity.GistPostData
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 
 internal class GistEditorFragmentViewModel(
@@ -12,6 +14,7 @@ internal class GistEditorFragmentViewModel(
   private val gistFileLiveDataFactory: GistFileLiveDataFactory
 ) : ViewModel() {
 
+  val disposable = CompositeDisposable()
   val gistFileLiveData = gistFileLiveDataFactory.create()
 
   val PostDone = MutableLiveData<Boolean>().apply {
@@ -35,7 +38,7 @@ internal class GistEditorFragmentViewModel(
         onError = {
           PostDone.value = false
         }
-      )
+      ).addTo(disposable)
   }
 
   fun AddNewFile(fileName: String, content: String) {
@@ -43,5 +46,11 @@ internal class GistEditorFragmentViewModel(
       fileName,
       content
     )
+  }
+
+  override fun onCleared() {
+    super.onCleared()
+
+    disposable.dispose()
   }
 }

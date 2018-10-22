@@ -20,6 +20,7 @@ internal class GistDetailViewFragmentViewModel(
   private val addGistFavoriteUsecase: AddGistFavoriteUsecase,
   private val removeGistFavoriteUsecase: RemoveGistFavoriteUsecase
 ) : ViewModel() {
+
   val gistDetailLiveData: GistDetailLiveData = gistInfoamtionLiveDataFactory.create(targetGistId)
   val gistDetailFileListLiveData: GistDetailFileListLiveData = gistDetailFileListLiveDataFactory.create(targetGistId)
 
