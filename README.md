@@ -13,7 +13,7 @@
 
 - RxJava
 - Navigation Component
-- Safe Args
+- Safe Args   
   takahirom さんがツイートしてたこのライブラリですね。
   https://twitter.com/new_runnable/status/1052932598316466177
 - ViewModel
