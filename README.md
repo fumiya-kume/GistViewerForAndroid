@@ -1,5 +1,9 @@
 [![Build Status](https://kuxu.visualstudio.com/GistViewerForAndroid/_apis/build/status/GistViewerForAndroid-Android-CI)](https://kuxu.visualstudio.com/GistViewerForAndroid/_build/latest?definitionId=5)
 
+# AppCenter @ rlease branch
+
+[![Build status](https://build.appcenter.ms/v0.1/apps/238831d4-d89e-4428-a2c0-32b4a4fee695/branches/release/badge)](https://appcenter.ms)
+
 # 頑張ったところをリストアップしてみる
 
 - マルチモジュールを基本としたアプリ設計
