@@ -1,3 +1,5 @@
+# Azure Pipeline @ master branch
+
 [![Build Status](https://kuxu.visualstudio.com/GistViewerForAndroid/_apis/build/status/GistViewerForAndroid-Android-CI)](https://kuxu.visualstudio.com/GistViewerForAndroid/_build/latest?definitionId=5)
 
 # AppCenter @ rlease branch
