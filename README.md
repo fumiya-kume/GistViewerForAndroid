@@ -59,14 +59,16 @@ gist-viewer://login
  ```
 
 # 図解してみる
-![001](https://user-images.githubusercontent.com/16269075/47307326-bddbaa00-d669-11e8-9ec5-831e6f9446cd.png)
-![002](https://user-images.githubusercontent.com/16269075/47307327-bddbaa00-d669-11e8-84b0-30e59d044559.png)
-![003](https://user-images.githubusercontent.com/16269075/47307328-be744080-d669-11e8-959f-dd4ebd3c19bd.png)
-![004](https://user-images.githubusercontent.com/16269075/47307329-be744080-d669-11e8-9c53-5110ee37ee3f.png)
-![005](https://user-images.githubusercontent.com/16269075/47307330-be744080-d669-11e8-9242-1e50d6bcfffc.png)
-![006](https://user-images.githubusercontent.com/16269075/47307331-be744080-d669-11e8-93c6-c53af3729f72.png)
-![007](https://user-images.githubusercontent.com/16269075/47307333-bf0cd700-d669-11e8-96bf-05e951c63215.png)
-![008](https://user-images.githubusercontent.com/16269075/47307334-bf0cd700-d669-11e8-8d55-8b876b50d803.png)
+![001](https://user-images.githubusercontent.com/16269075/47329748-db803200-d6b0-11e8-8276-ad3db00fe705.jpeg)
+![002](https://user-images.githubusercontent.com/16269075/47329751-db803200-d6b0-11e8-8ef3-f2d4abd24bad.jpeg)
+![003](https://user-images.githubusercontent.com/16269075/47329752-dc18c880-d6b0-11e8-861e-bc45dcfd4061.jpeg)
+![004](https://user-images.githubusercontent.com/16269075/47329754-dc18c880-d6b0-11e8-836d-2f9f20757541.jpeg)
+![005](https://user-images.githubusercontent.com/16269075/47329755-dc18c880-d6b0-11e8-8df2-4afd5d5b1dd1.jpeg)
+![006](https://user-images.githubusercontent.com/16269075/47329756-dc18c880-d6b0-11e8-8261-35a8c426aaf1.jpeg)
+![007](https://user-images.githubusercontent.com/16269075/47329758-dcb15f00-d6b0-11e8-9449-17506d2f08ab.jpeg)
+![008](https://user-images.githubusercontent.com/16269075/47329759-dcb15f00-d6b0-11e8-94fc-fcc5e8d6decc.jpeg)
+![009](https://user-images.githubusercontent.com/16269075/47329760-dcb15f00-d6b0-11e8-8958-788b5480583c.jpeg)
+
 
 
 # 詳細なスライドについて
