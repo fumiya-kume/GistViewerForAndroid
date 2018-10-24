@@ -77,6 +77,6 @@ gist-viewer://login
 
 
 
-# 詳細なスライドについて
+# 最新のスライドについて
 
 https://www.icloud.com/keynote/0pkcSrb4Xhhbv6e_ntoVHv3Jw
